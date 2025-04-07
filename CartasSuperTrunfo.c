@@ -26,6 +26,8 @@ int main() {
         float area;
         float pib;
         int pontosTuristicos;
+        float densidade = 0.0;
+        float pibPessoa = 0.0;
         
         printf("Carta %d\n",i);
         printf("Qual o estado:");
@@ -42,7 +44,12 @@ int main() {
         scanf("%f",&pib);
         printf("Numero de pontos turisticos:");
         scanf("%d",&pontosTuristicos);
-        printf("Carta %d: \n Estado: %c\n Código: %c%s\n Nome da cidade: %s\n População: %d\n Área: %f km²\n PIB: %f bilhões de reais\n Número de Pontos Turísticos: %d",i,estado,estado,codCarta,nomeDaCidade,populacao,area,pib,pontosTuristicos);
+        printf("\n");
+        
+        pibPessoa = (pib*pow(10.0,9.0))/populacao;
+        densidade = populacao/area;
+        
+        printf(" Carta %d: \n Estado: %c\n Código: %c%s\n Nome da cidade: %s\n População: %d\n Área: %.2f km²\n PIB: %.2f bilhões de reais\n Número de Pontos Turísticos: %d\n Densidade Populacional: %.2f hab/km²\n PIB per Capita: %.2f reais",i,estado,estado,codCarta,nomeDaCidade,populacao,area,pib,pontosTuristicos,densidade,pibPessoa);
         printf("\n\n");
         }
         return 0;
